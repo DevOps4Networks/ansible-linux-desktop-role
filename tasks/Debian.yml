@@ -1,0 +1,8 @@
+---
+
+- name: Install Debian Gnome desktop
+  apt: name="@GNOME Desktop" state=present
+  when: ansible_os_family == 'Debian' and debian_desktop == 'gnome'
+
+
+

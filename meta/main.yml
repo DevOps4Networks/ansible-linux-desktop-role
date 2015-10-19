@@ -1,0 +1,23 @@
+---
+galaxy_info:
+  author: Nathan Sowatskey
+  description: Linux desktops - Gnome, KDE, Cinnamon, MATE, Xfce.
+  license: MIT
+  min_ansible_version: 1.6.3
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+  - name: EL
+    versions:
+    - all
+  - name: Fedora
+    versions:
+    - all
+  categories:
+  - development
+  - system
+dependencies: []
