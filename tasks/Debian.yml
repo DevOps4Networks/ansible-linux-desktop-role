@@ -2,7 +2,6 @@
 
 - name: Install Debian Gnome desktop
   apt: name="@gnome-desktop-environment" state=present
-  when: ansible_os_family == 'Debian' and debian_desktop == 'gnome'
-
+  when: debian_desktop == 'gnome'
 
 
