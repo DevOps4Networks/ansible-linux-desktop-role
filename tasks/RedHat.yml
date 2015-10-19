@@ -1,7 +1,7 @@
 ---
 
 - name: Install RedHat Gnome desktop
-  yum: name="@GNOME Desktop" state=present
+  yum: name="@gnome-desktop-environment" state=present
   when: ansible_os_family == 'RedHat' and redhat_desktop == 'gnome'
 
 
