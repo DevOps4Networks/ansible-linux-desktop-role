@@ -1,6 +1,6 @@
 ---
 
 - name: Install RedHat Gnome desktop
-  yum: name="@general-desktop" state=present
+  yum: name="@general-desktop" state=latest
 
 
