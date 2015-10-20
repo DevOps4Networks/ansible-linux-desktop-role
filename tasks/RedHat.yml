@@ -1,6 +1,8 @@
 ---
 
 - name: Install RedHat Gnome desktop
-  yum: name="@general-desktop" state=latest
-
+#TODO: In theory one should be able to do this:
+#yum: name="@gnome-desktop-environment" state=latest
+#BUT, I have been unable to get that to work, so:
+  shell: yum -y groupinstall gnome-desktop-environment
 
