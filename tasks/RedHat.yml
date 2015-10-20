@@ -8,3 +8,33 @@
 #BUT, I have been unable to get that to work, so:
   shell: yum -y groupinstall gnome-desktop-environment
   when: redhat_desktop == 'gnome'
+
+- name: Install RedHat Gnome Shell desktop
+  shell: yum -y groupinstall gnome-desktop-environment
+  shell: echo "exec gnome-session" >> ~odldev/.xinitrc
+  shell: chown odldev ~odldev/.xinitrc
+  when: redhat_desktop == 'gnome_shell'
+
+- name: Install RedHat KDE desktop
+  shell: yum -y groupinstall kde-desktop-environment
+  shell: echo "exec startkde" >> ~odldev/.xinitrc
+  shell: chown odldev ~odldev/.xinitrc
+  when: redhat_desktop == 'kde'
+
+- name: Install RedHat Cinnamon desktop
+  shell: yum --enablerepo=epel -y install cinnamon*
+  shell: echo "exec /usr/bin/cinnamon-session" >> ~odldev/.xinitrc
+  shell: chown odldev ~odldev/.xinitrc
+  when: redhat_desktop == 'cinnamon'
+
+- name: Install RedHat MATE desktop
+  shell: yum --enablerepo=epel -y groupinstall mate-desktop-environment
+  shell: echo "exec /usr/bin/mate-session" >> ~odldev/.xinitrc
+  shell: chown odldev ~odldev/.xinitrc
+  when: redhat_desktop == 'mate'
+
+- name: Install RedHat Xfce desktop
+  shell: yum --enablerepo=epel -y groupinstall xfce-desktop
+  shell: echo "exec /usr/bin/xfce4-session" >> ~odldev/.xinitrc
+  shell: chown odldev ~odldev/.xinitrc
+  when: redhat_desktop == 'xfce'
