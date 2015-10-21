@@ -20,7 +20,7 @@
   when: redhat_desktop == 'cinnamon'
 
 - name: Install RedHat MATE desktop
-  shell: yum --enablerepo=epel -y groupinstall mate-desktop-environment
+  shell: yum --enablerepo=epel -y groupinstall mate-desktop-environment x11
   when: redhat_desktop == 'mate'
 
 - name: Install RedHat Xfce desktop
