@@ -16,7 +16,7 @@
   when: redhat_desktop == 'kde'
 
 - name: Install RedHat Cinnamon desktop
-  shell: yum --enablerepo=epel -y install cinnamon* "X Window System"
+  shell: yum --enablerepo=epel -y install cinnamon* x11
   when: redhat_desktop == 'cinnamon'
 
 - name: Install RedHat MATE desktop
