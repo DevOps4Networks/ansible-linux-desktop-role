@@ -9,7 +9,7 @@
 #see https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!topic/ansible-project/ResIg2C-y_c
 #so:
   shell: yum -y groupinstall gnome-desktop-environment
-  when: redhat_desktop == 'gnome' OR redhat_desktop == 'gnome_shell'
+  when: redhat_desktop == 'gnome' or redhat_desktop == 'gnome_shell'
 
 - name: Install RedHat KDE desktop
   shell: yum -y groupinstall kde-desktop-environment
