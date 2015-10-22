@@ -24,5 +24,5 @@
   when: redhat_desktop == 'mate'
 
 - name: Install RedHat Xfce desktop
-  shell: yum --enablerepo=epel -y groupinstall xfce-desktop
+  shell: yum --enablerepo=epel -y groupinstall xfce-desktop x11
   when: redhat_desktop == 'xfce'
