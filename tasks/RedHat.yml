@@ -4,11 +4,11 @@
 
 - name: Install RedHat Gnome desktop
 #TODO: In theory one should be able to do this:
-#yum: name="@GNOME Desktop" state=present
+  yum: name="^gnome-desktop-environment" state=present
 #BUT, I have been unable to get that to work,
 #see https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!topic/ansible-project/ResIg2C-y_c
 #so:
-  shell: yum -y groupinstall gnome-desktop-environment
+ #shell: yum -y groupinstall gnome-desktop-environment
   when: redhat_desktop == 'gnome' or redhat_desktop == 'gnome_shell'
 
 - name: Install RedHat KDE desktop
