@@ -1,7 +1,7 @@
 ---
 
 - name: Install Debian Gnome desktop
-  apt: name="@gnome-desktop-environment" state=present
+  apt: name="@^gnome-desktop-environment" state=present
   when: debian_desktop == 'gnome'
 
 

@@ -3,26 +3,24 @@
 - debug: var=redhat_desktop
 
 - name: Install RedHat Gnome desktop
-#TODO: In theory one should be able to do this:
   yum: name="@^gnome-desktop-environment" state=present
-#BUT, I have been unable to get that to work,
-#see https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!topic/ansible-project/ResIg2C-y_c
-#so:
- #shell: yum -y groupinstall gnome-desktop-environment
   when: redhat_desktop == 'gnome' or redhat_desktop == 'gnome_shell'
 
 - name: Install RedHat KDE desktop
-  shell: yum -y groupinstall kde-desktop-environment
+  yum: name="@^kde-desktop-environment" state=present
   when: redhat_desktop == 'kde'
 
 - name: Install RedHat Cinnamon desktop
-  shell: yum --enablerepo=epel -y install cinnamon* x11
+  #shell: yum --enablerepo=epel -y install cinnamon* x11
+  yum: enablerepo=epel name="@^cinnamon*" state=present
   when: redhat_desktop == 'cinnamon'
 
 - name: Install RedHat MATE desktop
-  shell: yum --enablerepo=epel -y groupinstall mate-desktop-environment x11
+  #shell: yum --enablerepo=epel -y groupinstall mate-desktop-environment x11
+  yum: enablerepo=epel name="@^mate-desktop-environment" state=present
   when: redhat_desktop == 'mate'
 
 - name: Install RedHat Xfce desktop
-  shell: yum --enablerepo=epel -y groupinstall xfce-desktop x11
+  #shell: yum --enablerepo=epel -y groupinstall xfce-desktop x11
+  yum: enablerepo=epel name="@^xfce-desktop" state=present
   when: redhat_desktop == 'xfce'
