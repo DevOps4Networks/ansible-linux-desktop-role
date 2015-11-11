@@ -26,4 +26,4 @@
   when: redhat_desktop == 'xfce'
   
 - name: Install RedHat X11
-  yum: name="x11" state=present
+  yum: name="@x11" state=present
