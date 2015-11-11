@@ -17,7 +17,7 @@
 
 - name: Install RedHat MATE desktop
   #shell: yum --enablerepo=epel -y groupinstall mate-desktop-environment x11
-  yum: enablerepo=epel name="@^mate-desktop-environment" state=present
+  yum: enablerepo=epel name="@^mate-desktop-environment,x11" state=present
   when: redhat_desktop == 'mate'
 
 - name: Install RedHat Xfce desktop
