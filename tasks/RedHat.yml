@@ -25,5 +25,5 @@
   yum: enablerepo=epel name="@^xfce-desktop" state=present
   when: redhat_desktop == 'xfce'
   
- - name: Install RedHat X11
+- name: Install RedHat X11
   yum: name="x11" state=present
